@@ -1,0 +1,114 @@
+/* ==========
+   Paleta cálida (madera/pino)
+   ========== */
+:root{
+  --brand:#8b5e3c;        /* marrón pino */
+  --brand-2:#6f472b;      /* marrón más oscuro */
+  --accent:#c27c37;       /* acento cálido */
+  --bg:#fbfaf8;           /* fondo cálido claro */
+  --surface:#ffffff;
+  --border:#e7e1da;
+  --text:#1f2937;
+  --muted:#6b7280;
+}
+
+html,body{background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+h1,h2,h3,.brand-serif{font-family:"Playfair Display",serif}
+
+/* Navbar */
+.navbar{background:var(--surface)!important;border-bottom:1px solid var(--border)}
+.navbar .navbar-brand{font-weight:700; letter-spacing:.2px}
+.navbar .brand-badge{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:.75rem;
+  background:linear-gradient(180deg,#fff, #f5efe7);
+  border:1px solid var(--border);
+}
+
+/* Sección hero */
+.hero{
+  border:1px solid var(--border);border-radius:1rem;padding:1.25rem 1rem;margin-top:1rem;
+  background:
+    linear-gradient(135deg,rgba(194,124,55,.08),rgba(139,94,60,.08));
+}
+
+/* Cards */
+.card{border:1px solid var(--border);border-radius:1rem;overflow:hidden;background:var(--surface)}
+.card .card-img-top{aspect-ratio:4/3;object-fit:cover;background:#fff}
+.card:hover{transform:translateY(-2px);transition:transform .15s ease}
+
+/* Precio */
+.price-badge{
+  background:var(--brand);color:#fff;font-weight:700;border-radius:.5rem;
+  display:inline-block;padding:.25rem .5rem;font-size:.95rem
+}
+
+/* Botones */
+.btn-primary{background:var(--brand);border-color:var(--brand)}
+.btn-primary:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.btn-outline-primary{color:var(--brand);border-color:var(--brand)}
+.btn-outline-primary:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* Footer */
+.footer{color:var(--muted);font-size:.9rem;padding:2rem 0}
+
+/* Links utilitarios */
+a.link-muted{color:var(--muted);text-decoration:none}
+a.link-muted:hover{text-decoration:underline}
+
+/* Pequeñas utilidades */
+.badge-accent{background:var(--accent);color:#fff}
+.banner-hero{
+  position:relative; margin-top:12px; border-radius:1rem; overflow:hidden;
+  min-height:320px; display:flex; align-items:center;
+  background:url('../img/placeholder.webp') center/cover no-repeat;
+  border:1px solid var(--border);
+}
+.banner-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(0,0,0,.45), rgba(0,0,0,.15), rgba(0,0,0,0));
+}
+.banner-inner{ position:relative; z-index:1; color:#fff; padding:2rem 1rem }
+.banner-inner h1{ font-size:clamp(1.6rem, 2.5vw, 2.4rem); margin:0 0 .5rem }
+.banner-inner p{ margin:0 0 1rem; opacity:.95 }
+/* ---------- Visual polish ---------- */
+.banner-hero{
+  position:relative; margin-top:12px; border-radius:1rem; overflow:hidden;
+  min-height:360px; display:flex; align-items:center;
+  background:url('../img/placeholder.webp') center/cover no-repeat;
+  border:1px solid var(--border);
+}
+.banner-hero::after{
+  content:""; position:absolute; inset:0;
+  /* oscurecemos un poco la imagen para que el texto destaque */
+  background:linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.15), rgba(0,0,0,0));
+}
+.banner-inner{ position:relative; z-index:1; color:#fff; padding:2.25rem 1rem }
+.banner-inner h1{ font-size:clamp(1.8rem, 2.8vw, 2.6rem); margin:0 0 .4rem }
+.banner-inner p{ margin:0 0 1rem; opacity:.95 }
+.text-glow{
+  text-shadow:0 1px 2px rgba(0,0,0,.45), 0 4px 18px rgba(0,0,0,.35);
+}
+
+/* Carrusel: máscara lateral + caption legible */
+.carousel .carousel-item img{ filter:contrast(1.05) saturate(1.04) }
+.carousel .carousel-item::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 65%, rgba(0,0,0,.35));
+}
+.carousel .carousel-caption{
+  backdrop-filter: blur(2px);
+  background:rgba(0,0,0,.42);
+  border-radius:.75rem;
+  padding:.5rem .65rem;
+}
+
+/* Fondo sutil tipo madera */
+body.with-wood{
+  background-image:
+    radial-gradient(1000px 400px at 10% -20%, rgba(139,94,60,.06), transparent 60%),
+    radial-gradient(800px 400px at 110% 120%, rgba(194,124,55,.06), transparent 60%),
+    repeating-linear-gradient( 90deg,
+      rgba(139,94,60,.04), rgba(139,94,60,.04) 8px,
+      rgba(139,94,60,.02) 8px, rgba(139,94,60,.02) 16px
+    );
+}
